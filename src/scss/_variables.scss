@@ -1,0 +1,27 @@
+/******* VARIABLES *****/ 
+$colorNegro: #242525;
+$colorBlanco: #ffffff;
+$colorPrimario: #011a27;
+$colorCuarto:#DADADA;
+$colorSecundario: #063852;
+$colorTerciario: #f0810f;
+$fuenteTitulo:'DM Sans', sans-serif;
+$fuenteTexto: 'Heebo', sans-serif;
+
+
+
+
+
+
+/****** GLOBALES ******/ 
+html
+{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after
+{
+    box-sizing: inherit;
+}

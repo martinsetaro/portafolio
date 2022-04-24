@@ -1,0 +1,379 @@
+@use 'variables' as v;
+@use 'normalize';
+@use 'mixin' as m;
+
+
+/******** HEADER ********/
+
+
+
+/********* CUERPO *****/ 
+.cuerpo
+{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    
+}
+
+
+
+/******** DATOS ****/ 
+
+.datos
+{
+ grid-column: 1 / 2;
+ position: relative;
+ overflow: hidden;
+}
+.light_mode{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: v.$colorCuarto;
+    align-items: center;
+    padding-top: 2rem;
+    position: absolute;
+    z-index: 99;
+
+
+ img 
+    {
+        width: 20rem;
+        height: 20rem;
+    }
+    h2
+    {
+        font-size: 5rem;
+        color: v.$colorNegro;
+        font-family: v.$fuenteTexto;
+        margin-bottom: 0;
+        transition: all .3s linear;
+    }
+    h3 
+    {
+        font-size: 3.2rem;
+        color: v.$colorNegro;
+        font-family: v.$fuenteTexto;
+        transition: all .3s linear;
+        margin-top: 0;
+    }
+
+
+}
+.light_mode h2:hover
+{
+    color: v.$colorTerciario;
+}
+.light_mode h3:hover 
+{
+    transform: rotateY(360deg);
+}
+.light_mode .habilidades
+{
+    font-family: v.$fuenteTitulo;
+    color: v.$colorTerciario;
+    font-size: 3rem;
+}
+
+.dark_mode{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background : v.$colorNegro;
+    padding-top: 2rem;
+    position: absolute;
+
+
+ img 
+    {
+        width: 20rem;
+        height: 20rem;
+    }
+    h2
+    {
+        font-size: 5rem;
+        color: v.$colorCuarto;
+        font-family: v.$fuenteTexto;
+        margin-bottom: 0;
+        transition: all .3s linear;
+    }
+    h3 
+    {
+        font-size: 3.2rem;
+        color: v.$colorCuarto;
+        font-family: v.$fuenteTexto;
+        transition: all .3s linear;
+        margin-top: 0;
+    }
+
+
+}
+.dark_mode h2:hover
+{
+    color: v.$colorTerciario;
+}
+.dark_mode h3:hover 
+{
+    transform: rotateY(360deg);
+}
+.dark_mode .habilidades
+{
+    font-family: v.$fuenteTitulo;
+    color: v.$colorTerciario;
+    font-size: 3rem;
+}
+.iconos__skills 
+{
+    width: 95%;
+    height: 30rem;
+    padding-top:6rem;
+    background: v.$colorNegro;
+    border-radius: 1rem;
+    margin-top: 2rem;
+   
+    ion-icon 
+    {
+        font-size: 5rem;
+        color:v.$colorCuarto;
+        font-family: v.$fuenteTexto;
+        margin-bottom: 1rem;
+        margin-right: 2rem;
+        margin-left: 3rem;
+
+    }
+    img 
+    {
+        width: 5rem;
+        height: 5rem;
+        margin-right: 2rem;
+        margin-left: 3rem;
+    }
+}
+
+
+
+
+/******* PROYECTOS ****/ 
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(6,56,82); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(6,56,82);
+}
+.proyectos
+{
+    grid-column: 2 / 3;
+    background-color: #dadada;
+    overflow-x: hidden;
+    
+}
+.contenedor_proyectos 
+{
+    width: 100%;
+    height: 80rem;
+    overflow-y: scroll;
+}
+.header
+{
+    width: 101.3rem;
+    height: 8rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(6,56,82,.9);
+    position: fixed;
+    
+}
+.header__logo
+{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    
+    align-items: center;
+    padding-left: 2rem;
+    h1 
+    {
+    font-family: v.$fuenteTitulo;
+    color: v.$colorCuarto;
+    font-size: 4rem;
+    text-align: left;
+    }
+}
+.day_night 
+{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 4rem;
+    span 
+    {
+        color: v.$colorCuarto;
+        font-size: 4rem;
+        cursor: pointer;
+        
+    }
+}
+
+.proyecto
+{
+    width: 100%;
+    height: 130rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12rem;
+    
+    img
+    {
+        width: 100%;
+        height: 50rem;
+    }
+    h2 
+    {
+        font-size: 3.5rem;
+        color: v.$colorCuarto;
+        margin: 0 auto;
+        text-transform: uppercase;
+        background-color: v.$colorSecundario;
+        padding: .5rem 1rem;
+        border-radius: .6rem;
+        width: 55%;
+        text-align: center;
+    }
+    p 
+    {
+        font-size: 2.8rem;
+        color: v.$colorNegro;
+        padding: 1rem 2rem;
+        font-family: v.$fuenteTexto;
+    }
+    h3 
+    {
+        font-size: 3rem;
+        font-family:v.$fuenteTitulo;
+        text-align:center;
+    }
+    
+}
+.dos 
+{
+    margin-top: -6rem;
+}
+.proyecto .imagene 
+{
+    width: 100%;
+    height: 40rem;
+}
+.iconos__skills-proyectos 
+{
+    width: 90%;
+    height: 8rem;
+    background-color: v.$colorNegro;
+    padding-top: 1rem;
+    padding-left: 6rem;
+    margin: 0 auto;
+    img 
+    {
+        width: 6rem;
+        height: 6rem;
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+    ion-icon 
+    {
+        font-size: 6rem;
+        margin-right: 3rem;
+        margin-left: 3rem;
+        color: v.$colorCuarto;
+    }
+}
+
+
+
+
+
+/********* INFORMACION ****/ 
+.informacion 
+{
+ grid-column: 3 / 4;
+ height: 80rem;
+ background-color: v.$colorNegro;
+ h2 
+ {
+     font-size: 2.4rem;
+     color: v.$colorCuarto;
+     font-family: v.$fuenteTitulo;
+     text-align: center;
+ }
+}
+.enlaces_proyectos
+{
+    width: 100%;
+    height: 70rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+  
+}
+.enlaces_proyectos .btn_proyectos
+{
+    width: 90%;
+    height: 4rem;
+    font-size: 2.4rem;
+    border: none;
+    background-color: v.$colorTerciario;
+    color: v.$colorCuarto;
+    font-family: v.$fuenteTexto;
+    cursor: pointer;
+    margin-left:2rem;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+.enlaces_proyectos .btn_proyectos:hover 
+{
+    background-color:v.$colorSecundario;
+    color: v.$colorCuarto;
+}
+.enlaces_proyectos .listado
+{
+    width: 80%;
+    height: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: all .6s ease;
+    
+    h3 
+    {
+        font-size: 2.2rem;
+        color: v.$colorCuarto;
+        font-family: v.$fuenteTexto;
+        text-align: center;
+        cursor:pointer;
+        transition: all .3s ease;
+        padding: .5rem 1rem;
+        border-radius: 1rem;
+        
+    }
+}
+.enlaces_proyectos .listado h3:hover 
+{
+    background-color: v.$colorCuarto;
+    color: v.$colorNegro;
+    
+}
+.listado a 
+{
+    text-decoration: none;
+}
