@@ -359,42 +359,61 @@ template {
   display: grid;
   grid-template-columns: 20% 60% 20%;
 }
+@media (max-width: 760px) {
+  .cuerpo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200rem;
+  }
+}
 
 /******** DATOS ****/
 .datos {
   grid-column: 1/2;
   position: relative;
   overflow: hidden;
-}
-
-.light_mode {
-  width: 100%;
-  height: 100vh;
+  background-color: #242425;
   display: flex;
   flex-direction: column;
-  background: #DADADA;
   align-items: center;
-  padding-top: 2rem;
-  position: absolute;
-  z-index: 99;
 }
-.light_mode img {
+@media (max-width: 760px) {
+  .datos {
+    width: 100%;
+    height: 65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.datos h2 {
+  font-size: 5rem;
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 0;
+  text-align: center;
+  transition: all 0.3s linear;
+}
+.datos h3 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s linear;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.imagen_perfil {
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imagen_perfil img {
   width: 20rem;
   height: 20rem;
-}
-.light_mode h2 {
-  font-size: 5rem;
-  color: #242525;
-  font-family: "Heebo", sans-serif;
-  margin-bottom: 0;
-  transition: all 0.3s linear;
-}
-.light_mode h3 {
-  font-size: 3.2rem;
-  color: #242525;
-  font-family: "Heebo", sans-serif;
-  transition: all 0.3s linear;
-  margin-top: 0;
 }
 
 .light_mode h2:hover {
@@ -405,65 +424,22 @@ template {
   transform: rotateY(360deg);
 }
 
-.light_mode .habilidades {
+.habilidades {
   font-family: "DM Sans", sans-serif;
   color: #f0810f;
-  font-size: 3rem;
-}
-
-.dark_mode {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #242525;
-  padding-top: 2rem;
-  position: absolute;
-}
-.dark_mode img {
-  width: 20rem;
-  height: 20rem;
-}
-.dark_mode h2 {
-  font-size: 5rem;
-  color: #DADADA;
-  font-family: "Heebo", sans-serif;
-  margin-bottom: 0;
-  transition: all 0.3s linear;
-}
-.dark_mode h3 {
-  font-size: 3.2rem;
-  color: #DADADA;
-  font-family: "Heebo", sans-serif;
-  transition: all 0.3s linear;
-  margin-top: 0;
-}
-
-.dark_mode h2:hover {
-  color: #f0810f;
-}
-
-.dark_mode h3:hover {
-  transform: rotateY(360deg);
-}
-
-.dark_mode .habilidades {
-  font-family: "DM Sans", sans-serif;
-  color: #f0810f;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 .iconos__skills {
   width: 95%;
   height: 30rem;
-  padding-top: 6rem;
+  padding-top: 1rem;
   background: #242525;
   border-radius: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .iconos__skills ion-icon {
-  font-size: 5rem;
+  font-size: 3rem;
   color: #DADADA;
   font-family: "Heebo", sans-serif;
   margin-bottom: 1rem;
@@ -471,10 +447,14 @@ template {
   margin-left: 3rem;
 }
 .iconos__skills img {
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   margin-right: 2rem;
   margin-left: 3rem;
+}
+
+.iconos__skills ion-icon:hover {
+  color: #f0810f;
 }
 
 /******* PROYECTOS ****/
@@ -505,12 +485,19 @@ template {
 }
 
 .header {
-  width: 101.3rem;
+  width: 50rem;
   height: 8rem;
   display: flex;
   justify-content: space-around;
-  background-color: rgba(6, 56, 82, 0.9);
+  background-color: rgb(6, 56, 82);
   position: fixed;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+@media (max-width: 760px) {
+  .header {
+    position: relative;
+  }
 }
 
 .header__logo {
@@ -527,30 +514,30 @@ template {
   text-align: left;
 }
 
-.day_night {
-  width: 100%;
-  height: 8rem;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  padding-right: 4rem;
-}
-.day_night span {
-  color: #DADADA;
-  font-size: 4rem;
-  cursor: pointer;
-}
-
 .proyecto {
   width: 100%;
-  height: 130rem;
+  height: 100rem;
   display: flex;
   flex-direction: column;
-  margin-top: 12rem;
+  margin-top: 10rem;
+  margin-bottom: -5rem;
+}
+@media (max-width: 760px) {
+  .proyecto {
+    margin-bottom: -30rem;
+    margin-top: 10rem;
+  }
 }
 .proyecto img {
   width: 100%;
   height: 50rem;
+}
+@media (max-width: 760px) {
+  .proyecto img {
+    width: 90%;
+    height: 30rem;
+    margin-left: 2rem;
+  }
 }
 .proyecto h2 {
   font-size: 3.5rem;
@@ -562,12 +549,24 @@ template {
   border-radius: 0.6rem;
   width: 55%;
   text-align: center;
+  font-family: "Heebo", sans-serif;
+}
+@media (max-width: 760px) {
+  .proyecto h2 {
+    font-size: 1.8rem;
+  }
 }
 .proyecto p {
   font-size: 2.8rem;
   color: #242525;
   padding: 1rem 2rem;
-  font-family: "Heebo", sans-serif;
+  font-family: "Lato", sans-serif;
+}
+@media (max-width: 760px) {
+  .proyecto p {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 }
 .proyecto h3 {
   font-size: 3rem;
@@ -588,21 +587,35 @@ template {
   width: 90%;
   height: 8rem;
   background-color: #242525;
-  padding-top: 1rem;
-  padding-left: 6rem;
-  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem auto;
 }
 .iconos__skills-proyectos img {
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   margin-right: 3rem;
   margin-left: 3rem;
 }
+@media (max-width: 760px) {
+  .iconos__skills-proyectos img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
 .iconos__skills-proyectos ion-icon {
-  font-size: 6rem;
+  font-size: 4rem;
   margin-right: 3rem;
   margin-left: 3rem;
   color: #DADADA;
+}
+@media (max-width: 760px) {
+  .iconos__skills-proyectos ion-icon {
+    font-size: 3rem;
+  }
 }
 
 /********* INFORMACION ****/
@@ -611,11 +624,22 @@ template {
   height: 80rem;
   background-color: #242525;
 }
+@media (max-width: 760px) {
+  .informacion {
+    margin-top: -25rem;
+    z-index: 99;
+  }
+}
 .informacion h2 {
   font-size: 2.4rem;
   color: #DADADA;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Heebo", sans-serif;
   text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.informacion h2:hover {
+  color: #f0810f;
 }
 
 .enlaces_proyectos {
@@ -629,15 +653,27 @@ template {
 .enlaces_proyectos .btn_proyectos {
   width: 90%;
   height: 4rem;
-  font-size: 2.4rem;
-  border: none;
-  background-color: #f0810f;
-  color: #DADADA;
-  font-family: "Heebo", sans-serif;
+  font-size: 1.6rem;
   cursor: pointer;
   margin-left: 2rem;
-  font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: inset 0px 1px 0px 0px #fce2c1;
+  background: linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+  background-color: #ffc477;
+  border-radius: 6px;
+  border: 1px solid #eeb44f;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Arial;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #cc9f52;
+}
+
+.enlaces_proyectos .btn_proyectos:hover {
+  background: linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+  background-color: #fb9e25;
 }
 
 .enlaces_proyectos .btn_proyectos:hover {
@@ -653,7 +689,7 @@ template {
   transition: all 0.6s ease;
 }
 .enlaces_proyectos .listado h3 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #DADADA;
   font-family: "Heebo", sans-serif;
   text-align: center;
@@ -670,4 +706,28 @@ template {
 
 .listado a {
   text-decoration: none;
+}
+
+/********************* contactame *****************/
+.contactame {
+  width: 100%;
+  height: 30rem;
+  border-top: 0.1rem solid #f0810f;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+.contactame a {
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  color: #f0810f;
+}
+.contactame h4 {
+  font-size: 1.8rem;
+  font-family: "Heebo", sans-serif;
+  color: #ffffff;
+  text-align: center;
 }
